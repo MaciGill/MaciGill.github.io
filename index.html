@@ -1,200 +1,259 @@
-
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio analityka danych: SQL, SAS, Python, Power BI, AI i Data Engineering.">
-    <title>Data Analytics | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maciej Gil — Data Analyst focused on banking analytics, risk, Python, SQL, data engineering and visualization.">
+  <meta name="theme-color" content="#111C22">
+  <title>Maciej Gil |  Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="navbar">
-    <a href="#home" class="logo">Maciek <span>Gil</span></a>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Maciej Gil — home">
+      <span class="brand-mark">MG</span>
+      <span class="brand-name">MACIEJ <b>GIL</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#projects">Projects</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#explorations">Explorations</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-contact">Contact ↗</a>
     </nav>
+  </header>
 
-    <button id="themeToggle" aria-label="Change theme">☾</button>
-</header>
-
-<main>
-
-    <!-- HOME -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="eyebrow">DATA | BANKING | AI | DATA ENGINEERING | RISK  </p>
-
-            <h1>
-                Turning data into
-                <span>business insights.</span>
-            </h1>
-
-            <p class="intro">
-                Data Analyst with proven, multi-year expertise in banking and risk analytics.
-                
-            </p>
-
-            <div class="skills">
-                <span>SQL</span>
-                <span>SAS</span>
-                <span>Python</span>
-                <span>Power BI</span>
-                <span>Excel</span>
-                <span>AI</span>
-            </div>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">Explore projects</a>
-                
-            </div>
+  <main id="main">
+    <section class="hero section-shell" id="home">
+      <figure class="hero-photo">
+        <img
+          src="assets/images/mountain2.jpg"
+          alt="Rugged mountain peaks beneath low clouds"
+        >
+        <figcaption>FIELD NOTES / 000</figcaption>
+      </figure>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> DATA ANALYTICS <i>/</i> BANKING <i>/</i> DATA ENGINEERING</p>
+        <h1>Turning data into<br><span>business insights.</span></h1>
+        <p class="hero-lead">I explore data, build analytical solutions and turn complex information into clear decisions.</p>
+        <p class="hero-sub">Data Analyst with multi-year experience in banking and risk analytics. Interested in SAS, Python, SQL, data engineering, AI and visual storytelling.</p>
+        <div class="skill-chips" aria-label="Core technologies">
+          <span>SQL</span><span>SAS</span><span>Python</span><span>Power BI</span><span>Tableau</span><span>AI</span>
         </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore projects <span>↗</span></a>
+          <a class="button button-ghost" href="https://github.com/MaciGill" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+        </div>
+        <div class="hero-meta">
+          <span>BASED IN POLAND</span>
+          <span class="meta-divider"></span>
+          <span>CURIOUS BY NATURE</span>
+        </div>
+      </div>
 
-        <img class="hero-image" src="assets/images/PLANSZA.png" alt="Górski krajobraz">
+      <div class="hero-visual">
+        <div class="visual-topline">
+          <span>FIELD NOTES / 001</span>
+          <span>ANALYTICS</span>
+        </div>
+        <div class="visual-frame">
+          <!-- Keep the full dashboard visible so none of its charts are cropped. -->
+          <img
+            src="assets/images/PLANSZA.png"
+            alt="Analytics dashboard with risk indicators, charts, a world map and data workflow"
+            onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+          >
+        </div>
+        <div class="visual-bottomline">
+          <span class="visual-coords">45°49′ N&nbsp; 6°51′ E</span>
+          <span class="visual-caption">EXPLORE BEYOND DATA</span>
+        </div>
+        <div class="visual-side-note">OBSERVE <b>·</b> ANALYZE <b>·</b> DISCOVER</div>
+      </div>
+      <div class="hero-contour" aria-hidden="true"></div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-
-        <div class="section-heading">
-            <!-- <p class="eyebrow">MY WORK</p> -->
-            <h2>Projects</h2>
-            <p>End-to-end data analytics projects.</p>
-        </div>
-
-        <div class="filters">
-            <button class="filter active" data-filter="all">All</button>
-            <button class="filter" data-filter="python">Python</button>
-            <button class="filter" data-filter="sql">SQL</button>
-            <button class="filter" data-filter="bi">Power BI</button>
-            <button class="filter" data-filter="ai">AI</button>
-        </div>
-
-<input
-    type="search"
-    id="projectSearch"
-    placeholder="Search projects, technologies..."
-    class="search-input"
-    aria-label="Search projects"
-/>
-        <div class="project-grid">
-
-            <article class="project-card" data-category="python sql">
-                <div class="project-image risk">ANALYTICS PLATFORM</div>
-                <div class="project-content">
-                    <p class="project-type">BANKING ANALYTICS</p>
-                    <h3>Credit Risk Analysis</h3>
-                    <p>
-                        Analysis of credit card default risk,
-                        customer segmentation and default rates.
-                    </p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                       
-                    </div>
-                    <a href="https://github.com/MaciGill/analytics_platform"
-                       target="_blank" rel="noopener noreferrer">View project →</a>
-                </div>
-            </article>
-
-           
-        </div>
+    <section class="intro-strip">
+      <div class="section-shell intro-strip-inner">
+        <span class="strip-label">MY APPROACH</span>
+        <p>Good analysis starts with the right question — and ends with an insight someone can use.</p>
+        <span class="strip-index">01 — 05</span>
+      </div>
     </section>
 
-    <!-- TOOLKIT -->
-    <section id="toolkit" class="section toolkit">
-        <div class="section-heading">
-            <p class="eyebrow">TECHNICAL SKILLS</p>
-            <h2>Analytics Toolkit</h2>
+    <section class="section-shell section-block" id="projects">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / SELECTED WORK</p>
+          <h2>Projects<span class="heading-period">.</span></h2>
+          <p class="section-description">From business questions to end-to-end analytical solutions.</p>
         </div>
+        <span class="section-aside">ANALYTICS FIELDWORK</span>
+      </div>
 
+      <div class="project-controls">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter" data-filter="python" aria-pressed="false">Python</button>
+          <button class="filter" data-filter="sql" aria-pressed="false">SQL</button>
+          <button class="filter" data-filter="bi" aria-pressed="false">BI</button>
+          <button class="filter" data-filter="Hobby" aria-pressed="false">Hobby</button>
+        </div>
+        <label class="search-wrap">
+          <span class="sr-only">Search projects</span>
+          <span aria-hidden="true">⌕</span>
+          <input type="search" id="projectSearch" placeholder="Search projects or tools...">
+        </label>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card project-featured" data-category="python sql bi" data-search="credit risk banking default pandas python segmentation">
+          <div class="project-art risk-art">
+            <div class="art-kicker">BANKING ANALYTICS / 001</div>
+            <div class="art-title">CREDIT<br>RISK</div>
+            <div class="art-chart" aria-hidden="true">
+              <span style="height:35%"></span><span style="height:52%"></span><span style="height:43%"></span><span style="height:76%"></span><span style="height:61%"></span><span style="height:88%"></span><span style="height:69%"></span>
+            </div>
+            <div class="art-foot">RISK ANALYSIS <b>●</b> CUSTOMER INSIGHTS</div>
+          </div>
+          <div class="project-content">
+            <div class="project-topline"><span class="project-type">FEATURED PROJECT</span><span class="project-number">01 / 02</span></div>
+            <h3>Credit Risk Analysis</h3>
+            <p>Exploration of credit card default risk, customer characteristics and default rates. The project demonstrates a reproducible analytical workflow from data preparation to visual insights.</p>
+            <div class="tag-list"><span>Python</span></div>
+            <a class="text-link" href="https://github.com/MaciGill/analytics_platform" target="_blank" rel="noopener noreferrer">View repository <span>↗</span></a>
+          </div>
+
+        </article>
+<!-- /*adding new project card for the second project*/ -->
+        <article class="project-card project-featured" data-category="python sql bi" data-search="heavy metal bands in Europe analysis">
+          <div class="project-art metal-art">
+            <div class="art-kicker">MUSIC ANALYTICS / 002</div>
+            <div class="art-title">HEAVY<br>METAL</div>
+            <!-- Decorative SVG: the trace forms an M and is hidden from assistive technology. -->
+            <svg class="metal-wave" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+              <path class="metal-wave-axis" d="M 0 110 H 320" />
+              <path class="metal-wave-glow" d="M 8 110 L 8 22 L 84 96 L 160 22 L 236 96 L 312 22 L 312 110" />
+              <path class="metal-wave-line" d="M 8 110 L 8 22 L 84 96 L 160 22 L 236 96 L 312 22 L 312 110" />
+            </svg>
+            <div class="art-foot">EUROPEAN METAL SCENE <b>●</b> BAND ANALYSIS</div>
+          </div>
+          <div class="project-content">
+            <div class="project-topline"><span class="project-type">FEATURED PROJECT</span><span class="project-number">03 / 04</span></div>
+            <h3>HEAVY METAL Bands Analysis</h3>
+            <p>Discovering interesting facts about metal music in Europe.</p>
+            <div class="tag-list"><span>Python</span></div>
+            <a class="text-link" href="https://github.com/MaciGill/metal_bands_europe" target="_blank" rel="noopener noreferrer">View repository <span>↗</span></a>
+          </div>
+
+        </article>
+       <!-- /*end*/ -->
+      </div>
+      <p class="no-results" id="noResults" hidden>No projects match your search.</p>
+    </section>
+
+    <section class="toolkit-section" id="toolkit">
+      <div class="section-shell section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / TECHNICAL EQUIPMENT</p>
+            <h2>Analytics toolkit<span class="heading-period">.</span></h2>
+            <p class="section-description">The tools I use to explore, transform and communicate data.</p>
+          </div>
+          <span class="section-aside">TOOLS FOR EXPLORATION</span>
+        </div>
         <div class="tool-grid">
-            <div class="tool-card">
-                <h3>Programming</h3>
-                <p>Python · SAS 4GL · VBA </p>
-            </div>
-
-            <div class="tool-card">
-                <h3>Databases</h3>
-                <p>SQL · PL/SQL · T-SQL · NoSQL </p>
-            </div>
-
-            <div class="tool-card">
-                <h3>Business Intelligence</h3>
-                <p>Power BI  · Excel · Tableau</p>
-            </div>
-
-            <div class="tool-card">
-                <h3>Analytics</h3>
-                <p>Credit Risk · Customer Segmentation · CRM </p>
-            </div>
-
-            <div class="tool-card">
-                <h3>AI & Automation</h3>
-                <p>RAG · GitHub Copilot · Automation</p>
-            </div>
-
-            <div class="tool-card">
-                <h3>Development</h3>
-                <p>Git · GitHub · VS Code · Docker</p>
-            </div>
+          <article class="tool-card"><span class="tool-icon">⌘</span><p class="tool-label">01 / PROGRAMMING</p><h3>Code & scripting</h3><p>Python · SAS 4GL · VBA</p></article>
+          <article class="tool-card"><span class="tool-icon">▤</span><p class="tool-label">02 / DATA STORAGE</p><h3>Databases</h3><p>SQL · PL/SQL · T-SQL · PostgreSQL · NoSQL</p></article>
+          <article class="tool-card"><span class="tool-icon">▥</span><p class="tool-label">03 / VISUALIZATION</p><h3>Business intelligence</h3><p>Power BI · Excel · Tableau </p></article>
+          <article class="tool-card"><span class="tool-icon">⌁</span><p class="tool-label">04 / ANALYTICS</p><h3>Analytical methods</h3><p>Credit Risk · CRM · Segmentation </p></article>
+          <article class="tool-card"><span class="tool-icon">✳</span><p class="tool-label">05 / AUTOMATION</p><h3>AI & automation</h3><p>RAG · GitHub Copilot · Workflow automation</p></article>
+          <article class="tool-card"><span class="tool-icon">⌘</span><p class="tool-label">06 / ENGINEERING</p><h3>Development workflow</h3><p>Git · GitHub · VS Code · Docker</p></article>
         </div>
+      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <div class="section-heading">
-            <!-- <p class="eyebrow">ABOUT ME</p> -->
-            <h2>ABOUT ME</h2>
+    <!-- <section class="section-shell section-block" id="explorations">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / OPEN DATA LAB</p>
+          <h2>Data explorations<span class="heading-period">.</span></h2>
+          <p class="section-description">A space for experiments with geography, movement and the outdoors.</p>
         </div>
+        <span class="section-aside">BEYOND THE DASHBOARD</span>
+      </div>
+      <div class="exploration-grid">
+        <article class="exploration-card">
+          <div class="exploration-visual contour-visual"><span class="map-coordinate">49° N / 19° E</span><span class="map-pin">＋</span><span class="map-scale">0 ━━━━━ 5 KM</span></div>
+          <div class="exploration-copy"><p class="project-type">GEO / GPS DATA</p><h3>Mountain geography</h3><p>Mapping routes, terrain and spatial patterns with geographic data.</p><span class="coming-label">EXPLORATION CONCEPT</span></div>
+        </article>
+        <article class="exploration-card">
+          <div class="exploration-visual profile-visual">
+            <svg viewBox="0 0 500 180" preserveAspectRatio="none" aria-label="Illustrative mountain elevation profile">
+              <path class="profile-area" d="M0 150 L40 128 L75 138 L120 70 L155 92 L205 35 L245 72 L290 55 L330 115 L370 80 L420 98 L460 45 L500 20 L500 180 L0 180 Z"/>
+              <path class="profile-stroke" d="M0 150 L40 128 L75 138 L120 70 L155 92 L205 35 L245 72 L290 55 L330 115 L370 80 L420 98 L460 45 L500 20"/>
+            </svg>
+            <span class="profile-caption">ELEVATION / ILLUSTRATIVE</span>
+          </div>
+          <div class="exploration-copy"><p class="project-type">SPORTS ANALYTICS</p><h3>Trail performance</h3><p>Exploring pace, elevation gain, heart rate and race performance.</p><span class="coming-label">EXPLORATION CONCEPT</span></div>
+        </article>
+        <article class="exploration-card">
+          <div class="exploration-visual weather-visual"><div class="weather-orbit orbit-one"></div><div class="weather-orbit orbit-two"></div><span class="weather-symbol">°</span><span class="weather-caption">ALTITUDE / CONDITIONS</span></div>
+          <div class="exploration-copy"><p class="project-type">ENVIRONMENTAL DATA</p><h3>Mountain conditions</h3><p>Connecting altitude, temperature, wind and changing weather conditions.</p><span class="coming-label">EXPLORATION CONCEPT</span></div>
+        </article>
+      </div>
+      <p class="exploration-note">Illustrative visual concepts — not real-time measurements or published research results.</p>
+    </section> -->
 
-        <p class="about-text">
-           Experienced Data Analyst with a strong background in the banking sector.
-           My day-to-day work combines technical proficiency with deep industry knowledge, backed by a commitment to continuous professional development.
-
-        </p>
-
-        <div class="certifications">
+    <section class="about-section" id="about">
+      <div class="section-shell about-layout">
+        <div class="about-heading">
+          <p class="eyebrow">04 / THE PERSON BEHIND THE DATA</p>
+          <h2>Beyond<br>the numbers<span class="heading-period">.</span></h2>
+          <div class="about-stamp">STAY<br>CURIOUS<span>↗</span></div>
+        </div>
+        <div class="about-copy">
+          <p class="about-lead">I am a Data Analyst with a background in banking and risk analytics, interested in building reliable analytical solutions and making data useful.</p>
+          <p>My work combines business understanding with technical skills across SQL, SAS, Python and business intelligence. I am continuously developing my capabilities in data engineering, automation and AI.</p>
+          <p>Outside the world of data, I spend time in the mountains — trail running, climbing and exploring alpine terrain. I value curiosity, preparation and the process of reaching ambitious goals, both in analytics and outdoors.</p>
+          <div class="interests">
+            <span>↗ Mountain running</span><span>↗ Rock climbing</span><span>↗ Mountaineering</span><span>↗ Alpine exploration</span>
+          </div>
+          <div class="certifications">
+            <p class="project-type">PROFESSIONAL DEVELOPMENT</p>
             <h3>Certifications</h3>
-            <ul>
-                <li>SAS Certified Professional: Advanced Programming Using SAS 9.4</li>
-                <li>SAS Certified Specialist: Base Programming Using SAS 9.4</li>
-            </ul>
+            <div class="cert-row"><span>SAS Certified Professional: Advanced Programming Using SAS 9.4</span><b>✓</b></div>
+            <div class="cert-row"><span>SAS Certified Specialist: Base Programming Using SAS 9.4</span><b>✓</b></div>
+          </div>
+          <a class="text-link" href="https://github.com/MaciGill" target="_blank" rel="noopener noreferrer">Explore my GitHub <span>↗</span></a>
         </div>
-
-        <div class="social-links">
-            <a href="https://github.com/MaciGill" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
+      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Let's connect.</h2>
-        <p>Interested in data analytics, AI and technology.</p>
-        <a href="mailto:maciek.git.1991@gmail.com" class="btn primary">
-            Contact me
-        </a>
-        <img class="contact-image" src="assets/images/mountain.jpg" alt="Górski krajobraz">
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-inner">
+        <p class="eyebrow">05 / NEXT POINT OF CONTACT</p>
+        <h2>Let's explore<br><span>what's possible.</span></h2>
+        <p>Interested in data analytics, data engineering, AI and outdoor adventures.</p>
+        <a class="button button-primary" href="mailto:maciek.git.1991@gmail.com">Get in touch <span>↗</span></a>
+        <div class="contact-mountain" aria-hidden="true"></div>
+      </div>
     </section>
+  </main>
 
-</main>
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark">MG</span><span class="brand-name">MACIEJ <b>GIL</b></span></a>
+    <span class="footer-note">DATA HAS NO BOUNDARIES. NEITHER DOES CURIOSITY.</span>
+    <div class="footer-links"><a href="https://github.com/MaciGill" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="mailto:maciek.git.1991@gmail.com">EMAIL ↗</a></div>
+    <span class="copyright">© 2026 MG PORTFOLIO</span>
+  </footer>
 
-<footer>
-    <p>© 2026 MG Portfolio</p>
-    <a href="#home">Back to top ↑</a>
-</footer>
-
-<script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>

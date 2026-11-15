@@ -1,76 +1,56 @@
-
-// PROJECT FILTERING
-
-
+// Project filtering and text search
 const filterButtons = document.querySelectorAll(".filter");
 const projectCards = document.querySelectorAll(".project-card");
 const searchInput = document.getElementById("projectSearch");
+const noResults = document.getElementById("noResults");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
 let activeFilter = "all";
 
-function updateProjects() {
+function filterProjects() {
+  const query = (searchInput?.value || "").trim().toLowerCase();
+  let visibleCount = 0;
 
-    const query = searchInput.value.toLowerCase();
+  projectCards.forEach((card) => {
+    const categories = (card.dataset.category || "").split(/\s+/);
+    const searchableText = `${card.dataset.search || ""} ${card.textContent}`.toLowerCase();
+    const matchesFilter = activeFilter === "all" || categories.includes(activeFilter);
+    const matchesSearch = searchableText.includes(query);
+    const isVisible = matchesFilter && matchesSearch;
 
-    projectCards.forEach(card => {
+    card.hidden = !isVisible;
+    if (isVisible) visibleCount += 1;
+  });
 
-        const categories = card.dataset.category.split(" ");
-        const content = card.textContent.toLowerCase();
-
-        const matchesFilter =
-            activeFilter === "all" ||
-            categories.includes(activeFilter);
-
-        const matchesSearch = content.includes(query);
-
-        card.style.display =
-            matchesFilter && matchesSearch ? "block" : "none";
-
-    });
+  if (noResults) noResults.hidden = visibleCount !== 0;
 }
 
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        activeFilter = button.dataset.filter;
-
-        filterButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
-
-        button.classList.add("active");
-
-        updateProjects();
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter || "all";
+    filterButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
     });
+    filterProjects();
+  });
 });
 
-searchInput.addEventListener("input", updateProjects);
+searchInput?.addEventListener("input", filterProjects);
 
-
-
-// DARK / LIGHT MODE
-
-const themeButton = document.getElementById("themeToggle");
-
-themeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
-
-    const isDark = document.body.classList.contains("dark");
-
-    themeButton.textContent = isDark ? "☀" : "☾";
-
-    localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
-
+// Mobile navigation
+menuToggle?.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 });
 
-
-// RESTORE THEME
-
-const savedTheme = localStorage.getItem("portfolio-theme");
-
-if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    themeButton.textContent = "☀";
-}
+mainNav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Open navigation");
+  });
+});

@@ -168,6 +168,14 @@ h1, h2, h3 { font-family: var(--heading); font-weight: 600; }
 .art-kicker { top: 18px; }
 .art-foot { bottom: 17px; right: 20px; display: flex; justify-content: space-between; gap: 8px; }
 .art-foot b { color: var(--teal); }
+.summit-art {
+  isolation: isolate;
+  background:
+    repeating-radial-gradient(ellipse at 88% 26%,transparent 0 17px,rgba(57,127,117,.13) 18px 19px,transparent 20px 34px),
+    radial-gradient(ellipse at 80% 30%,#D2E2D8 0,#B8CEC3 42%,#8FA99E 100%);
+}
+.summit-mountain { position: absolute; right: 0; bottom: 0; width: 84%; height: 100%; pointer-events: none; }
+.summit-art .art-title { color: var(--text); font-size: clamp(26px,3.3vw,38px); }
 /* Credit-risk illustration uses the portfolio's light alpine palette. */
 .risk-art { background: radial-gradient(ellipse at 80% 30%,#D2E2D8 0,#B8CEC3 42%,#8FA99E 100%); }
 .warning-art {
